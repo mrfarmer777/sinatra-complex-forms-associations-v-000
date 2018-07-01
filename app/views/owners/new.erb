@@ -8,8 +8,8 @@
   <input type="text" name="owner[name]">
 
   <br></br>
-  <%=@pets.each do |pet|%>
-                              <!-- vvv We want the parans hash to include an owner hash and that hash to include a pet_ids array-->
+  <%@pets.each do |pet|%>
+                            <!-- LOOK! vvv We want the params hash to include an owner hash and that hash to include a pet_ids array-->
     <input type="checkbox" name="owner[pet_ids][]" value="<%=pet.id%>" id="<%=pet.id%>"><%=pet.name%></input>
   <%end%>
 
