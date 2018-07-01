@@ -4,5 +4,10 @@
   <label>Name:</label>
   <br />
 
-  <input type="text" name="owner[name]" id="owner_name" value="<%=@owner.name%>">
+  <input type="text" name="owner[name]" id="owner_name" value="<%=@owner.name%>"></input>
+  <br />
 
+  <label>Choose an Existing pet: </label>
+  <br />
+  <%Pet.all.each do |pet|%>
+    <input type="checkbox" name="owner[pet_ids][]" id="<%=pet.id%>" value="<%=pet.id%>"  ><%=pet.name%></input>
