@@ -2,15 +2,16 @@
 
 <form action="/owners" method="POST">
   <label>Name:</label>
-  
+
   <br></br>
-  
+
   <input type="text" name="owner[name]">
-  
+
   <br></br>
   <%=@pets.each do |pet|%>
+                              <!-- vvv We want the parans hash to include an owner hash and that hash to include a pet_ids array-->
     <input type="checkbox" name="owner[pet_ids][]" value="<%=pet.id%>" id="<%=pet.id%>"><%=pet.name%></input>
   <%end%>
-  
+
   <input type="submit" value="Create Owner">
 </form>
